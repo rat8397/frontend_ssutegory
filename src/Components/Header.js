@@ -7,24 +7,32 @@ const Header = styled.header`
   margin: 0 auto;
   display: flex;
   flex-direction: row;
-  background-color: #2D88FF;
+  background-color: rgba(0,0,0,0);
+  opacity:0.7;
   align-items: center;
 
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+
+  transition: top 0.2s ease-in-out;
+
 `;
 const HeaderRow = styled.div`
     display:flex;
     justify-content:center;
   width: 33%;
 `;
-const HeaderImage = styled.span``;
+const HeaderImage = styled.span`
+  cursor: pointer;
+  margin-right:10px;
+`;
 const HeaderTitle = styled.span`
-    color:white;
+    color:#1A1A1A;
     font-weight:700;
     font-size:18px;
+    
 `;
 export default () => {
   return (
