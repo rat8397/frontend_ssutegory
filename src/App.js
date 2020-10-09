@@ -1,25 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import axios from "axios";
+import styled from "styled-components";
+import Header from "./Components/Header";
+import globalstyles from "./styles/globalstyles";
+const Wrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+  background-color: red;
+`;
 function App() {
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    await axios.get("http://127.0.0.1:5000/", {
+      params: {
+        title: e.target.title.value,
+      },
+    });
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <globalstyles></globalstyles>
+      <>
+        <Wrapper>
+          <Header></Header>
+        </Wrapper>
+      </>
+    </>
   );
 }
 
