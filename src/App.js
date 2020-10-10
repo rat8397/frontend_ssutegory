@@ -52,11 +52,11 @@ function App() {
   return (
     <>
       <>
-        <GlobalStyles/>
+        <GlobalStyles />
         <Wrapper>
-          <Header/>
+          <Header />
           <Section>
-            <Introduction/>
+            <Introduction />
           </Section>
           <Section>
             <Form onSubmit={onSubmit}>
@@ -68,7 +68,7 @@ function App() {
               <Button load={load}></Button>
             </Form>
           </Section>
-          <Footer/>
+          <Footer />
         </Wrapper>
       </>
     </>
