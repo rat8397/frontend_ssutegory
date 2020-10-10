@@ -12,6 +12,10 @@ body {
     font-size:14px;
     font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin:0;
+    background-color: #FAFAFA;
+}
+body #root{
+    height:100%;
 }
 html {
 height: 100%;

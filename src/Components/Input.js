@@ -10,7 +10,7 @@ const Input = styled.input`
   &:focus {
     outline: none;
     height: 110px;
-    border: 2px solid #74A4F2;
+    border: 1px solid #74A4F2;
   }
   &:focus + label {
     top: -40px;
@@ -44,7 +44,7 @@ export default (props) => {
   }
   return (
     <Wrapper>
-      <Input id="textInput" type="text" name="title" value={props.value} onChange={props.onChange} onKeyUp={onEnterKey}></Input>
+      <Input id="textInput" type="text" name="title"autoComplete={"off"} value={props.value} onChange={props.onChange} onKeyUp={onEnterKey}></Input>
       <Label for="textInput">
         게시글의 제목을 입력하시면 카테고리를 추천해드려요!
       </Label>

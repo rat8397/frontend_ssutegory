@@ -29,7 +29,7 @@ const Wrapper = styled.div`
 export default (props) => {
   return (
     <Wrapper>
-      <Button >보내주세요</Button>
+      <Button>{props.load ? "추천 카테고리를 찾는중입니다" : "보내주세요"}</Button>
     </Wrapper>
   );
 };

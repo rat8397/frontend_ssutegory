@@ -10,13 +10,9 @@ const Footer = styled.footer`
   background-color: rgba(0, 0, 0, 0);
   opacity: 0.7;
   align-items: center;
-  justify-content:center;
-  border-top:1px solid  #555555;
-  position: absolute;
+  justify-content: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
 
-    left: 0;
-
-    bottom: 0;
 `;
 const FooterColumn = styled.div``;
 const FooterSpan = styled.span`
