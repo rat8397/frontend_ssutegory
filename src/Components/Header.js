@@ -7,17 +7,14 @@ const Header = styled.header`
   margin: 0 auto;
   display: flex;
   flex-direction: row;
-  background-color: rgba(0,0,0,0);
-  opacity:0.7;
+  background-color: white;
   align-items: center;
-
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-
   transition: top 0.2s ease-in-out;
-
+  z-index: 10;
 `;
 const HeaderRow = styled.div`
     display:flex;

@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   background-attachment: fixed;
 `;
 const Section = styled.div`
-  height: 100%;
+  height: 80%;
   background-color: rgba(0, 0, 0, 0);
   display: flex;
   justify-content: center;
@@ -25,6 +25,11 @@ const Form = styled.form`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+`;
+
+const SecHr = styled.hr`
+  width: 70%;
+  opacity: 0.7;
 `;
 function App() {
   const [load, setLoad] = useState(false);
@@ -58,6 +63,7 @@ function App() {
           <Section>
             <Introduction/>
           </Section>
+          <SecHr />
           <Section>
             <Form onSubmit={onSubmit}>
               <Input
