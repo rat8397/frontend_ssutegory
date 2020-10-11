@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { facebook_img, home_img, instagram_img } from "../imgs/imgs";
+import { facebook_img, find_img, github_img, home_img, instagram_img } from "../imgs/imgs";
 const Header = styled.header`
   height: 60px;
   width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: white;
   opacity: 0.7;
   align-items: center;
 
@@ -51,7 +51,7 @@ const onClickHome = () => {
 };
 export default () => {
   return (
-    <Header id="header">
+    <Header  id="header">
       <HeaderRow>
         <HeaderImage>
           <A onClick={onClickHome}>{home_img}</A>
@@ -62,9 +62,11 @@ export default () => {
       </HeaderRow>
       <HeaderRow>
         <HeaderImage>
-          <A onClick={onClickInput}>{instagram_img}</A>
+          <A onClick={onClickInput}>{find_img}</A>
         </HeaderImage>
-        <HeaderImage>{facebook_img}</HeaderImage>
+        <HeaderImage>
+        <A href="https://github.com/rat8397/frontend_ssutegory">{github_img}</A>
+          </HeaderImage>
       </HeaderRow>
     </Header>
   );

@@ -1,54 +1,45 @@
 import React from "react";
 import styled from "styled-components";
 const Wrapper = styled.div`
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 20%;
   position: relative;
 `;
 const TeamSection = styled.div`
-  width: 50%;
-  height: 50%;
-  min-width: 200px;
-  min-height: 150px;
-  border: 1px solid #74a4f2;
-  position: absolute;
-  top: 140px;
-  left: 100px;
-  background-color: #74a4f2;
-  opacity: 0.8;
-  border-radius: 5px;
-  box-shadow: 3px 3px 3px 3px #74a4f2;
-
-  &:hover {
-    box-shadow: 5px 5px 5px 5px #74a4f2;
-    
-  }
-  &:hover+div{
-    border-color:red;
-  }
   display: flex;
-  align-items: center;
   justify-content: center;
+  margin: 20px;
 `;
-const TeamIntroduction = styled.span`
-  font-size: 18px;
-  font-weight: 400;
-  color: white;
-  text-align: center;
+const TeamColumn = styled.div`
+  margin: 10px;
+  width: 50%;
 `;
-const DevSection = styled.div`
-  width: 300px;
-  height: 300px;
-  border: 1px solid black;
+const IntroTitle = styled.h3`
+  font-size: 30px;
+  font-weight: 500px;
+  margin: 0px 0px 30px 0px;
+  color:white;
+`;
+
+const IntroDes = styled.p`
+  font-size: 17px;
+  line-height: 150%;
+  color:white;
+
 `;
 export default () => {
   return (
     <Wrapper>
       <TeamSection>
-        <TeamIntroduction>
-          우리의 팀은 SSUtegory입니다.<br></br>추천 카테고리 소프트웨어를
-          만들기위해 구성된 팀입니다.
-        </TeamIntroduction>
+        <TeamColumn>
+          <IntroTitle>자동 카테고리 설정 프로그램</IntroTitle>
+          <IntroDes>
+            유저가 물건을 입력하면 자동으로 카테고리를 설정해주는 엔진입니다.{" "}
+            <br />
+            여러가지 물건이나 상품에 관한 게시글을 작성할 때 이용하여 편리하게
+            카테고리를 분류할 수 있도록 저희 SSUtegory가 개발한 엔진입니다.
+          </IntroDes>
+        </TeamColumn>
       </TeamSection>
     </Wrapper>
   );
