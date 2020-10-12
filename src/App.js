@@ -7,11 +7,21 @@ import Footer from "./Components/Footer";
 import Input from "./Components/Input";
 import Button from "./Components/Button";
 import Introduction from "./Components/Introduction";
+import Category from "./Components/Category";
+
+const Span = styled.span`
+font-weight:600;
+font-size:500px;
+
+position:relative;
+color:blue;
+`;
 const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   background-attachment: fixed;
 `;
+
 const Section = styled.div`
   height: 100%;
   background-color: rgba(0, 0, 0, 0);
@@ -42,19 +52,30 @@ const SectionTitle = styled.span`
   position: relative;
   bottom: 200px;
 `;
+
+
 function App() {
   const [load, setLoad] = useState(false);
   const [value, setValue] = useState("");
   const [scroll, setScroll] = useState(false);
+  const [check,setCheck]=useState(false);
+  const [first,setFirst]=useState("");
+  const [second,setSecond]=useState("");
+
 
   const onSubmit = async (e) => {
     const realvalue = e.target.title.value.replaceAll(" ", "_");
     setValue(""); ///버튼으로 서브밋시 밸류 초기화
     e.preventDefault();
     setLoad(true); ///서브밋하면 로딩중 띄움
+    setCheck(false);
     try {
       await axios.get(`/recommender/${realvalue}`).then((res) => {
-        console.log(res.data);
+
+        setFirst(res.data.first.title);
+        setSecond(res.data.second.title);
+
+        setCheck(true);
         setLoad(false);
       });
 
@@ -75,13 +96,14 @@ function App() {
         <GlobalStyles />
         <Wrapper>
           <Header />
-          <Section backgroundimage="https://miro.medium.com/max/3840/0*oP129kP824gId042.jpg">
+          <Section >
             <Introduction />
           </Section>
 
           <Section>
             <SectionTitle>게시글의 카테고리를 찾아보세요</SectionTitle>
             <SecHr></SecHr>
+            { check && <Category first={first} second={second} /> }
             <Form onSubmit={onSubmit}>
               <Input
                 onChange={onChange}
