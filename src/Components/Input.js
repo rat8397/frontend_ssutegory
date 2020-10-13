@@ -45,7 +45,7 @@ export default (props) => {
   return (
     <Wrapper>
       <Input id="textInput" type="text" name="title"autoComplete={"off"} value={props.value} onChange={props.onChange} onKeyUp={onEnterKey}></Input>
-      <Label for="textInput">
+      <Label htmlFor="textInput">
         게시글의 제목을 입력하시면 카테고리를 추천해드려요!
       </Label>
     </Wrapper>
