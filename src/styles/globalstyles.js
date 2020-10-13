@@ -22,6 +22,7 @@ height: 100%;
 }
 a {
     text-decoration:none;
+    cursor:pointer;
 }
 `;
 

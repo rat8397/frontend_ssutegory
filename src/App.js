@@ -18,6 +18,17 @@ const Section = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  ${(props) =>
+    props.backgroundimage
+      ? `background-image:url(${props.backgroundimage})`
+      : ""};
+`;
+const SecHr = styled.hr`
+  width: 70%;
+  opacity: 0.7;
+  position: relative;
+  bottom: 200px;
 `;
 const Form = styled.form`
   width: 100%;
@@ -26,24 +37,26 @@ const Form = styled.form`
   align-items: center;
   flex-direction: column;
 `;
-
-const SecHr = styled.hr`
-  width: 70%;
-  opacity: 0.7;
+const SectionTitle = styled.span`
+  font-size: 30px;
+  position: relative;
+  bottom: 200px;
 `;
 function App() {
   const [load, setLoad] = useState(false);
   const [value, setValue] = useState("");
+  const [scroll, setScroll] = useState(false);
+
   const onSubmit = async (e) => {
+    const realvalue = e.target.title.value.replaceAll(" ", "_");
     setValue(""); ///버튼으로 서브밋시 밸류 초기화
     e.preventDefault();
     setLoad(true); ///서브밋하면 로딩중 띄움
     try {
-      await axios
-        .get(
-          `http://ec2-3-15-158-63.us-east-2.compute.amazonaws.com:5000/recommender/${e.target.title.value}`
-        )
-        .then(() => setLoad(false));
+      await axios.get(`/recommender/${realvalue}`).then((res) => {
+        console.log(res.data);
+        setLoad(false);
+      });
 
       //서버 리퀘스트. 제대로 리퀘스트 가면 false로 바꿈
     } catch (error) {
@@ -53,18 +66,21 @@ function App() {
   const onChange = (e) => {
     setValue(e.target.value);
   };
-
+  // const onHeaderChange=()=>{
+  //   window.scro
+  // }
   return (
     <>
       <>
-        <GlobalStyles/>
+        <GlobalStyles />
         <Wrapper>
-          <Header/>
-          <Section>
-            <Introduction/>
+          <Header />
+          <Section backgroundimage="https://miro.medium.com/max/3840/0*oP129kP824gId042.jpg">
+            <Introduction />
           </Section>
-          <SecHr />
           <Section>
+            <SectionTitle>게시글의 카테고리를 찾아보세요</SectionTitle>
+            <SecHr></SecHr>
             <Form onSubmit={onSubmit}>
               <Input
                 onChange={onChange}
@@ -74,7 +90,7 @@ function App() {
               <Button load={load}></Button>
             </Form>
           </Section>
-          <Footer/>
+          <Footer />
         </Wrapper>
       </>
     </>

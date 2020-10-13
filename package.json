@@ -9,6 +9,7 @@
     "axios": "^0.20.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "reset": "^0.1.0",
     "styled-components": "^5.2.0",
@@ -23,6 +24,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "proxy": "http://ec2-3-15-158-63.us-east-2.compute.amazonaws.com:5000",
   "browserslist": {
     "production": [
       ">0.2%",
