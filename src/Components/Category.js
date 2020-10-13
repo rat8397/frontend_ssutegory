@@ -12,25 +12,20 @@ const Animation = keyframes`
 `;
 const List = styled.ul`
   display: flex;
+  justify-content: space-around;
+  align-items: center;
 `;
 
 const ListItem = styled.li`
-animation:${Animation} 3s;
-
-padding-top:30px;
-padding-left:90px;
-padding-right:50px;
-font-size:20px;
+  animation:${Animation} 3s;
+  font-size:20px;
 `;
 const Wrapper = styled.div`
-border-radius: 20px;
-height:100px;
-margin-bottom: 20px;
-display:flex;
-width:500px;
-
+  border-radius: 20px;
+  height:100px;
+  margin-bottom: 20px;
+  width:500px;
 `
-
 
 export default ({first,second}) => {
     return (

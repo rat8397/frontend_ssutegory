@@ -24,7 +24,7 @@ const Input = styled.input`
 const Label = styled.label`
   position: absolute;
   top: 40px;
-  left: 10px;
+  left: 55px;
   transition: top 0.3s;
   font-weight: 600;
   color: rgba(0, 0, 0, 0.2);
